@@ -1,0 +1,10 @@
+javascript:void(0)
+
+ <span class="fa fa-search"></span><span class="DEPTNO" style="display: none">#DEPTNO#</span>
+
+class= "dept"
+
+--
+click-Jquwey selector -> .dept
+
+'#DEPTNO#'
