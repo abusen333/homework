@@ -1,0 +1,9 @@
+Apart from resource management, Seems the portal is lacking an essential feature that essential for project management as below.
+1-	Comparing Planned vs. Actual: The portal does not currently support the comparison of planned versus actual progress due to the absence of a baseline. Without a baseline, it becomes challenging to monitor and control the project's progress effectively.
+2-	Updating Actuals and Schedule: When updating actual progress and refreshing the schedule, the system does not consider actual dates. Consequently, manual adjustments are required for activity sequencing and representing progress dependencies accurately, leading to a more reliable forecast completion date.
+3-	Calendar Functionality: The portal does not allow for the assignment of working days and non-working days, which significantly impacts project duration calculations. We noticed that the error decreases when activity durations are kept short, especially for those involving authorities who do not operate on weekends and public holidays.
+4-	Project Data Date Control: Presently, there is no provision for controlling the project data date, commonly referred to as "today" for the project schedule. This control is essential for aligning project management activities with the most current and relevant information.
+5-	Activities cannot be updated partially (not actual % complete).
+6-	In Finish to start activities, the successor starts in the same day of the predecessor’s finish date. In shall be in the next day of example if Activity “A” linked FS to Activity “B” and activity A starts on 1-Jan-2020 to finishes on 5-Jan-2020 activity B expected to start on 6-Jan-2020 not 5-Jan -202 as the portal now calculates.
+All the above does a cumulative errors increases when adding more activities and projects.
+
