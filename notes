@@ -1,0 +1,23 @@
+These terms represent different stages in the loan or credit card processing workflow:
+
+1. **Source**: The channel through which the application originates (online, branch, call center, DSA/agent, etc.)
+
+2. **Data Entry**: The stage where customer application information is inputted into the banking system
+
+3. **Dedup**: Deduplication - checking if the applicant has existing applications or accounts to prevent fraud/multiple applications
+
+4. **Underwriting**: The credit assessment process where the application is evaluated for creditworthiness
+
+5. **PDOC**: Physical Document verification - checking original documents submitted by applicants
+
+6. **Verification**: Validating customer information through various checks (address, employment, income, etc.)
+
+7. **LPO**: Loan Processing Officer review or Loan Payout stage where final approval is granted
+
+8. **Disbursed**: Funds have been released to the customer's account
+
+9. **RMFC**: Risk Management Final Check - a final risk assessment before or after disbursement
+
+10. **COMPLETE**: The application has successfully moved through the entire lifecycle and is now an active account
+
+These stages help banks track applications as they move through the lending process and identify bottlenecks or efficiency opportunities in their operations.
