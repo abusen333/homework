@@ -1,0 +1,54 @@
+------------------------------
+1- Row context
+
+-- starting with calcuate col Amount = Sales[Quantity] * Sales[Net Price]
+DAX multiplied the value of Sales[Quantity] by the value of Sales[Net Price] row by row
+the key to understanding the row context is in that “row by row”.
+
+When DAX knows which row to work on in a table, we say that there is a row context open on that table.
+In the computation of a calculated column, the row context is there by default. Its use is so intuitive that you do not really need to think about it
+
+when we try to do the same code in a measure Amount := Sales[Quantity] * Sales[Net Price]
+the code returns an error:! 
+{
+A single value for column ‘Quantity’ in table ‘Sales’ cannot be determined. 
+This can happen when a measure formula refers to a column that contains many values without specifying
+ an aggregation such as min, max, count, or sum to get a single result.}
+ 
+ Unfortunately, despite being very precise it is not really helping a newbie. A better error message would have been:
+ 
+ Cannot determine the value of Sales[Quantity] because there is no current row; maybe you need a row context on Sales?
+ 
+ * the code being a measure, there is no such thing as a “current row” 
+ 
+  * To make a long story short: without a row context, you cannot access the values of a column. This is the reason why, in measures, you need to use aggregator functions
+
+
+* writing Amount := SUM ( Sales[Quantity] * Sales[Net Price] ) is same as Amount := SUMX ( Sales, Sales[Quantity] * Sales[Net Price] )
+
+* A row context is created by any iterator. An iterator does what its name implies: it iterates. It scans a table row by row and it computes an expression during the iteration
+
+** Another important detail about the row context is that it provides a value only for the columns of the table being iterated over. 
+If you create a row context on Sales, you cannot access columns in Product for example. Likewise, if you create a row context on Product, 
+then you cannot access columns in Sales. If you need to access columns in another table linked through a relationship, then you can rely on the RELATED and RELATEDTABLE functions, 
+
+*** Calculated Column in Sales table SumOfQuantity = SUM ( Sales[Quantity] ) gives the total for evey row
+
+---------------------------------------
+--filter Context 
+- start with Countrows(Transations)
+-- every visul is dax summary table (filtered copy of the expanded table)
+-in dax all filters are tables
+
+- copy the fact
+-- expand the dimentions
+-- apply filters 
+
+--- calcuate filter is a table function 
+
+
+Usually the actual root cause of your problem is almost always one of the following:
+        “I forgot to add a filter”
+        “I forgot to remove a filter”
+        “I added a filter without meaning to”
+---------------------------------------------------
